@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\KampusController;
 use App\Http\Controllers\Api\MahasiswaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +26,11 @@ Route::prefix('mahasiswa')->group(function(){
     Route::post('/', [MahasiswaController::class, 'store']);
     Route::put('/{id}', [MahasiswaController::class, 'update']);
     Route::delete('/{id}', [MahasiswaController::class, 'destroy']);
+});
+Route::prefix('kampus')->group(function(){
+    Route::get('/', [KampusController::class, 'index']);
+    Route::get('/{id}', [KampusController::class, 'show']);
+    Route::post('/', [KampusController::class, 'store']);
+    Route::put('/{id}', [KampusController::class, 'update']);
+    Route::delete('/{id}', [KampusController::class, 'destroy']);
 });
