@@ -14,4 +14,8 @@ class Mahasiswa extends Model
         'nim',
         'jurusan'
     ];
+
+    public function kampus (){
+        return $this->hasOne(Kampus::class);
+    }
 }
